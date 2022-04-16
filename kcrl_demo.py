@@ -164,6 +164,7 @@ def main():
         max_rewards = []
         max_reward = float('-inf')
         image_count = 0
+        image_count2= 0
         
         accuracy_res = []
         accuracy_res_pruned = []
@@ -321,6 +322,19 @@ def main():
                     # so we need to do a tranpose on the input graph and another tranpose on the output graph
                     #graph_batch_pruned = np.array(graph_prunned_by_coef_2nd(graph_batch, training_set.inputdata))
                     graph_batch_pruned = np.transpose(pruning_cam(training_set.inputdata, np.array(graph_batch).T))
+                
+                image_count2 += 1
+
+                fig = plt.figure(3)
+                fig.suptitle('Iteration: {}'.format(i))
+                ax = fig.add_subplot(1, 2, 1)
+                ax.set_title('est_graph')
+                ax.imshow(np.around(graph_batch_pruned.T).astype(int),cmap=plt.cm.binary)
+                ax = fig.add_subplot(1, 2, 2)
+                ax.set_title('true_graph')
+                ax.imshow(training_set.true_graph, cmap=plt.cm.binary)
+                plt.savefig('{}/estimated_graph_{}.png'.format(config.plot_dir, image_count2))
+                plt.close()
 
                 # estimate accuracy
                 acc_est = count_accuracy(training_set.true_graph, graph_batch.T)
@@ -337,7 +351,7 @@ def main():
                 np.save('{}/accuracy_res.npy'.format(output_dir), np.array(accuracy_res))
                 np.save('{}/accuracy_res2.npy'.format(output_dir), np.array(accuracy_res_pruned))
                     
-                _logger.info('before pruning: fdr {}, tpr {}, fpr {}, shd {}, nnz {}'.format(fdr, tpr, fpr, shd, nnz))
+                #_logger.info('before pruning: fdr {}, tpr {}, fpr {}, shd {}, nnz {}'.format(fdr, tpr, fpr, shd, nnz))
                 _logger.info('after  pruning: fdr {}, tpr {}, fpr {}, shd {}, nnz {}'.format(fdr2, tpr2, fpr2, shd2, nnz2))
 
             # Save the variables to disk
