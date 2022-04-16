@@ -64,4 +64,3 @@ class DataGenerator(object):
         return input_batch
         _logger.info(print('Random input batch for training procedure\n', input_batch))
     
-    
