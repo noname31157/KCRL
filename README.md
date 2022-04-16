@@ -13,6 +13,7 @@ Run KCRL with any dataset:
 
 1. Set the initial parameters in the `python kcrl_demo.py` file. 
 2. To use prior knowledge, provide the existing edges (0 or 1) in the prior knowledge matrix in `python kcrl_demo.py` file. 
+
 Detailed comments available in the file. 
 
 ## Acknowledgement
