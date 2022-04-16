@@ -4,7 +4,7 @@ This is the public repository of the code implementation for KCRL.
 The code is tested with the following configuration:
 
 `Python=3.6.10`, `numpy=1.18.1`, `pandas=1.0.1`, `scikit-learn=0.22.1`, `scipy=1.4.1`, `tensorflow=1.13.1`, `networkx`, `pyyaml=5.3`, `pytz=2019.3`, `matplotlib=3.1.3`
-## To run the code
+## Instructions
 Run KCRL with any dataset:
 
 `python KCRL_demo.py`
@@ -13,6 +13,7 @@ Run KCRL with any dataset:
 
 1. Set the initial parameters as per the dataset in the `python KCRL_demo.py` file. Detailed comments can be found in the file.
 2. To use prior knowledge, provide the prior edges in the prior knowledge matrix in the `python KCRL_demo.py` file 
+
 ## Acknowledgement
 Our code has been benefited from the following existing works. We are really thankful to the corresponding authors.
 
