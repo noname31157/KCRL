@@ -1,11 +1,11 @@
 # KCRL
-This is the public repository of the code implementation for KCRL. 
+This is the public repository of code implementation for KCRL: A Prior Knowledge Based Causal Discovery Framework With Reinforcement Learning. 
 ## Requirements
 The code is tested with the following configuration:
 
 `Python=3.6.10`, `numpy=1.18.1`, `pandas=1.0.1`, `scikit-learn=0.22.1`, `scipy=1.4.1`, `tensorflow=1.13.1`, `networkx`, `pyyaml=5.3`, `pytz=2019.3`, `matplotlib=3.1.3`
 ## Instructions
-Run KCRL with any dataset:
+Test KCRL with any dataset:
 
 `python kcrl_demo.py`
 
